@@ -57,21 +57,41 @@
 }
 
 .color-1 {
+  background-color: blue;
 
 }
 
 .color-2 {
+  background-color: red;
 
 }
 
 .color-3 {
-
+  background-color: yellow;
 }
 
 .color-4 {
-
+  background-color: green;
 }
 
 .color-5 {
-
+  background-color: white;
 }
+
+.color-6 {
+  background-color: rgb(43, 208, 226);
+}
+
+.dark-mode {
+  background-color: black;
+  filter: invert(1);
+}
+
+.dark-mode-button {
+  background-color: purple;
+  border: 10px solid black;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 35px;
+}
+

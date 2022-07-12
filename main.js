@@ -49,7 +49,28 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+//color choices
+let paletteColors = document.querySelectorAll(".palette .palette-color");
 
+// paint brush
+let paintBrush = document.querySelector(" .current-brush");
+
+let canvasArea = document.querySelectorAll(".canvas div")
+
+let app = document.querySelector(".app")
+
+
+/*event listner to change bursh color based on color slection */
+for (let i = 0; i < paletteColors.length; i++){
+    paletteColors[i].addEventListener('click', function(){
+      console.log(paletteColors[i]);
+      paintBrush.classList.replace(paintBrush.classList[1], paletteColors[i].classList[1]);
+    })
+}
+
+    paintBrush.addEventListener('click', function(){
+      console.log(paintBrush);
+    })
 
 /****************************
  * EVENT LISTENER FUNCTIONS *
@@ -60,6 +81,60 @@ while (count <= gridWidth * gridWidth) {
 // empty at first, though a console.log just to know they're being
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
+
+//chnage canvas paint area by square
+
+
+//   square.addEventListener('click', function(){
+//     square.classList.replace(square.classList[1], paintBrush.classList[1]);
+//   })
+// }
+
+for (let square of canvasArea){
+square.addEventListener('mouseover', function(){
+
+  if (mouseDown === true){
+    square.classList.replace(square.classList[1], paintBrush.classList[1]);
+  }
+})
+}
+
+
+
+//mouse down = occurs when the user presses a mouse button over an element
+
+app.addEventListener('mousedown',function(){
+  mouseDown = true;
+});
+
+//mouse up = occurs when a user releasses a mouse button over an element
+
+
+app.addEventListener('mouseup',function(){
+  mouseDown = false;
+});
+
+
+//dark mode code
+
+
+let darkModeButton = document.querySelector(".dark-mode-button");
+
+let body = document.querySelector("body");
+
+let darkMode = darkModeButton.addEventListener('click', function (){
+  body.classList.toggle("dark-mode")
+})
+
+
+
+
+
+
+
+
+
+
 
 
 
